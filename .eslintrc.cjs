@@ -17,7 +17,12 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ['./tsconfig.json', './tsconfig.node.json'],
+        parser: '@typescript-eslint/parser',
+        project: [
+            './tsconfig.json',
+            './tsconfig.node.json',
+            './tsconfig.app.json',
+        ],
         tsconfigRootDir: __dirname,
     },
     plugins: ['react-refresh'],
@@ -26,5 +31,10 @@ module.exports = {
             'warn',
             { allowConstantExport: true },
         ],
+    },
+    settings: {
+        react: {
+            version: '18.3.1',
+        },
     },
 };
